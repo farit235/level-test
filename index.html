@@ -8,25 +8,30 @@
     <title>LevelUp</title>
   </head>
   <body>
-    <div class="block">
-      <header><h1>LevelUp</h1></header>
-      <main class="main-prod">
-        <div class="left-side">
-          <img class="img-1" src="./images/prod.png" alt="product image" />
-        </div>
-        <div class="right-side">
-          <main>
-            <ul class="list">
-              <li class="list-item">Преимущество №1</li>
-              <li class="list-item">Преимущество №2</li>
-              <li class="list-item">Преимущество №3</li>
-            </ul>
-          </main>
-          <footer>
-            <a class="button" href="#form" value="отправить"> Купить! </a>
-          </footer>
-        </div>
-      </main>
+    <div class="block fullscreen-bg">
+      <div class="block overlay">
+        <header><h1>LevelUp</h1></header>
+        <main class="main-prod">
+          <div class="left-side">
+            <img class="img-1" src="./images/prod.png" alt="product image" />
+          </div>
+          <div class="right-side">
+            <main>
+              <ul class="list">
+                <li class="list-item">Преимущество №1</li>
+                <li class="list-item">Преимущество №2</li>
+                <li class="list-item">Преимущество №3</li>
+              </ul>
+            </main>
+            <div class="zone">
+              <a class="button zone" id="btn" href="#ord"> Купить! </a>
+            </div>
+          </div>
+        </main>
+      </div>
+      <video loop="" muted="" autoplay="" class="fullscreen-bg__video">
+        <source src="./videos/movie.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <div class="product">
@@ -62,10 +67,11 @@
           <div class="disc">Мука</div>
         </div>
       </div>
-      <main>
+      <main class="colomn-items">
         <div class="photo-product">
           <img src="./images/prod.png" alt="photo-product" />
         </div>
+        <a class="button" id="btn" href="#ord"> Купить! </a>
       </main>
       <div class="colomn-items">
         <div class="item">
@@ -170,10 +176,10 @@
           <li class="list-item row">Преимущество №3</li>
         </ul>
       </aside>
-      <a class="button" href="#form" value="отправить"> Купить! </a>
+      <a class="button" id="btn" href="#ord"> Купить! </a>
     </div>
 
-    <div class="block order">
+    <div class="block order" id="ord">
       <header><h1>LevelUp</h1></header>
       <div class="timer">
         <div class="time-count-item time-count-hours">
@@ -195,20 +201,14 @@
             <img src="./images/prod.png" alt="photo-product" />
           </div>
         </main>
-        <form
-          class="telegram-form right-side"
-          action="#"
-          name="form"
-          id="#form"
-        >
+        <form class="form right-side" action="#" name="form" id="#form">
           <div class="price">
             <div class="point-list">
               <div class="point">Цена снизилась</div>
             </div>
             <div class="price">
               <div class="price-new">
-                <h2>3&nbsp;990&nbsp;</h2>
-                <span class="h-rouble">руб.</span>
+                <h2>3&nbsp;990&nbsp;руб.</h2>
               </div>
               <div class="price-old">
                 <s>8&nbsp;990&nbsp;<span class="h-rouble">руб.</span></s>
@@ -216,26 +216,27 @@
             </div>
           </div>
           <div class="input-box">
-            <label for="name"
-              ><span class="input-hint">Только русские буквы</span>
+            <label for="name " class="block"
+              ><span class="input-hint">Введите Ваше имя: </span>
               <input
                 type="text"
-                placeholder="Ваше имя"
+                placeholder="Иван"
                 name="name"
                 id="name"
                 required
               />
             </label>
           </div>
-
+          <!-- можно было сделать и input=number -->
           <div class="input-box">
-            <label for="phone">
-              <span class="input-hint">В формате: 88000000000</span>
+            <label for="phone" class="block input">
+              <span class="input-hint">Введите номер телефона: </span>
               <input
                 type="tel"
-                placeholder="Введите телефон"
+                placeholder="+7-123-456-78-90"
                 name="phone"
                 id="phone"
+                pattern="^[ 0-9]+$"
                 required
               />
             </label>
